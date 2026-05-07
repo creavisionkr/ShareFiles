@@ -1605,7 +1605,8 @@ async function ParnasRewardMembership() {
     var requestData = new RequestDataStructure();
 
     try {
-        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+        //20260507 Bug Fix, get the menu item list. revenue total is incorrect manual computation required.
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, false, false);
 
         if (isProceed) {
             const sanizedRqData = deepStringify(requestData);
