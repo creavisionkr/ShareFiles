@@ -395,7 +395,7 @@ async function GetCheckMenuItemInfo(jsFunc, rqData, checkInfo, nodeIndex) {
                 var menuItemQty = (isTest) ? 1 : await parent.TerminalApi.GetMenuItemQuantity(nodes[nodeIndex + i]);
                 var menuItemDesc = (isTest) ? "menuItemDesc" : await parent.TerminalApi.GetCheckItemDescription(nodes[nodeIndex + i]);
                 var menuItemBaseAmount = (isTest) ? 4500 : await parent.TerminalApi.GetMenuItemCost(nodes[nodeIndex + i]);
-                //20260512 Bug Fix
+                //20260512 Bug Fix Need Revenue Category Id 
                 var menuItemRevCatId = (isTest) ? 1 : await parent.TerminalApi.GetMenuItemRevenueCategoryId(String(menuItemId));
                 var menuItemPClsId = (isTest) ? 1 : await parent.TerminalApi.GetMenuItemProductClassId(String(menuItemId));
                 var menuItemVoidId = (isTest) ? 0 : await parent.TerminalApi.GetMenuItemVoidId(nodes[nodeIndex + i]);
