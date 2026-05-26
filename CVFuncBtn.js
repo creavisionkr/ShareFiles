@@ -32,6 +32,10 @@ const isTest = false;
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_465", "PostAgysCardPayment");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_480", "CCDiscountNew");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_481", "CCLookupDc");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_482", "PreFunctionButton_482");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_483", "PreFunctionButton_483");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_484", "PreFunctionButton_484");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_485", "PreFunctionButton_485");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_486", "PrintCardSlip");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_487", "LastCardSlip");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_488", "ManualCard");
@@ -41,6 +45,12 @@ const isTest = false;
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_492", "PreCustomReOpenClosedCheck");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_492", "PostCustomReOpenClosedCheck");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_493", "HelpGuideFor12UX");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_494", "PreFunctionButton_494");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_495", "PreFunctionButton_495");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_496", "PreFunctionButton_496");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_497", "PreFunctionButton_497");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_498", "PreFunctionButton_498");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_499", "PreFunctionButton_499");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostItem", "PostItem");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreSaveCheck", "PreSaveCheck");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostSaveCheck", "PostSaveCheck");
@@ -1458,6 +1468,108 @@ async function CCLookupDc() {
 }
 // #endregion
 
+// #region 20260526 Added New Function to call 3rd Party Application
+// #region "PreFunctionButton_482", "PreFunctionButton_482"
+async function PreFunctionButton_482() {
+    var jsFunc = "482";
+    var rqType = "PreFunctionButton_482";
+    var rqName = "PreFunctionButton_482";
+    var requestData = new RequestDataStructure();
+
+    try {
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+
+        if (isProceed) {
+            const sanizedRqData = deepStringify(requestData);
+            const logJsonInfo = JSON.stringify(sanizedRqData, null, 2);
+            await logToWorker(jsFunc + BR + logJsonInfo, LogLevel.DEBUG);
+            var responseData = await processRequest(sanizedRqData);
+
+            if (!responseData.IsSuccess && !isTest) {
+                await parent.TerminalApi.ShowCustomAlert(jsFunc,
+                    JSON.stringify(responseData.ResponseMessage, null, 2), 2);
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+        } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
+    } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
+}
+// #endregion
+
+// #region "PreFunctionButton_483", "PreFunctionButton_483"
+async function PreFunctionButton_483() {
+    var jsFunc = "483";
+    var rqType = "PreFunctionButton_483";
+    var rqName = "PreFunctionButton_483";
+    var requestData = new RequestDataStructure();
+
+    try {
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+
+        if (isProceed) {
+            const sanizedRqData = deepStringify(requestData);
+            const logJsonInfo = JSON.stringify(sanizedRqData, null, 2);
+            await logToWorker(jsFunc + BR + logJsonInfo, LogLevel.DEBUG);
+            var responseData = await processRequest(sanizedRqData);
+
+            if (!responseData.IsSuccess && !isTest) {
+                await parent.TerminalApi.ShowCustomAlert(jsFunc,
+                    JSON.stringify(responseData.ResponseMessage, null, 2), 2);
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+        } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
+    } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
+}
+// #endregion
+
+// #region "PreFunctionButton_484", "PreFunctionButton_484"
+async function PreFunctionButton_484() {
+    var jsFunc = "484";
+    var rqType = "PreFunctionButton_484";
+    var rqName = "PreFunctionButton_484";
+    var requestData = new RequestDataStructure();
+
+    try {
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+
+        if (isProceed) {
+            const sanizedRqData = deepStringify(requestData);
+            const logJsonInfo = JSON.stringify(sanizedRqData, null, 2);
+            await logToWorker(jsFunc + BR + logJsonInfo, LogLevel.DEBUG);
+            var responseData = await processRequest(sanizedRqData);
+
+            if (!responseData.IsSuccess && !isTest) {
+                await parent.TerminalApi.ShowCustomAlert(jsFunc,
+                    JSON.stringify(responseData.ResponseMessage, null, 2), 2);
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+        } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
+    } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
+}
+// #endregion
+
+// #region "PreFunctionButton_485", "PreFunctionButton_485"
+async function PreFunctionButton_485() {
+    var jsFunc = "485";
+    var rqType = "PreFunctionButton_485";
+    var rqName = "PreFunctionButton_485";
+    var requestData = new RequestDataStructure();
+
+    try {
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+
+        if (isProceed) {
+            const sanizedRqData = deepStringify(requestData);
+            const logJsonInfo = JSON.stringify(sanizedRqData, null, 2);
+            await logToWorker(jsFunc + BR + logJsonInfo, LogLevel.DEBUG);
+            var responseData = await processRequest(sanizedRqData);
+
+            if (!responseData.IsSuccess && !isTest) {
+                await parent.TerminalApi.ShowCustomAlert(jsFunc,
+                    JSON.stringify(responseData.ResponseMessage, null, 2), 2);
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+        } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
+    } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
+}
+// #endregion
+// #endregion
+
 // #region "PreFunctionButton_486", "PrintCardSlip"
 async function PrintCardSlip() {
     var jsFunc = "486";
@@ -1570,7 +1682,6 @@ async function ReopenErrCard() {
     } catch (error) { await logToWorker(rqName + BR + error, LogLevel.ERROR); }
 }
 // #endregion
-
 
 // #region "PreFunctionButton_490", "CEPSettings"
 async function CEPSettings() {
@@ -1742,6 +1853,158 @@ async function HelpGuideFor12UX() {
         } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
     } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
 }
+// #endregion
+
+// #region 20260526 Added New Function to call 3rd Party Application
+// #region "PreFunctionButton_494", "PreFunctionButton_494"
+async function PreFunctionButton_494() {
+    var jsFunc = "494";
+    var rqType = "PreFunctionButton_494";
+    var rqName = "PreFunctionButton_494";
+    var requestData = new RequestDataStructure();
+
+    try {
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+
+        if (isProceed) {
+            const sanizedRqData = deepStringify(requestData);
+            const logJsonInfo = JSON.stringify(sanizedRqData, null, 2);
+            await logToWorker(jsFunc + BR + logJsonInfo, LogLevel.DEBUG);
+            var responseData = await processRequest(sanizedRqData);
+
+            if (!responseData.IsSuccess && !isTest) {
+                await parent.TerminalApi.ShowCustomAlert(jsFunc,
+                    JSON.stringify(responseData.ResponseMessage, null, 2), 2);
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+        } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
+    } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
+}
+// #endregion
+
+// #region "PreFunctionButton_495", "PreFunctionButton_495"
+async function PreFunctionButton_495() {
+    var jsFunc = "495";
+    var rqType = "PreFunctionButton_495";
+    var rqName = "PreFunctionButton_495";
+    var requestData = new RequestDataStructure();
+
+    try {
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+
+        if (isProceed) {
+            const sanizedRqData = deepStringify(requestData);
+            const logJsonInfo = JSON.stringify(sanizedRqData, null, 2);
+            await logToWorker(jsFunc + BR + logJsonInfo, LogLevel.DEBUG);
+            var responseData = await processRequest(sanizedRqData);
+
+            if (!responseData.IsSuccess && !isTest) {
+                await parent.TerminalApi.ShowCustomAlert(jsFunc,
+                    JSON.stringify(responseData.ResponseMessage, null, 2), 2);
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+        } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
+    } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
+}
+// #endregion
+
+// #region "PreFunctionButton_496", "PreFunctionButton_496"
+async function PreFunctionButton_496() {
+    var jsFunc = "496";
+    var rqType = "PreFunctionButton_496";
+    var rqName = "PreFunctionButton_496";
+    var requestData = new RequestDataStructure();
+
+    try {
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+
+        if (isProceed) {
+            const sanizedRqData = deepStringify(requestData);
+            const logJsonInfo = JSON.stringify(sanizedRqData, null, 2);
+            await logToWorker(jsFunc + BR + logJsonInfo, LogLevel.DEBUG);
+            var responseData = await processRequest(sanizedRqData);
+
+            if (!responseData.IsSuccess && !isTest) {
+                await parent.TerminalApi.ShowCustomAlert(jsFunc,
+                    JSON.stringify(responseData.ResponseMessage, null, 2), 2);
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+        } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
+    } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
+}
+// #endregion
+
+// #region "PreFunctionButton_497", "PreFunctionButton_497"
+async function PreFunctionButton_497() {
+    var jsFunc = "497";
+    var rqType = "PreFunctionButton_497";
+    var rqName = "PreFunctionButton_497";
+    var requestData = new RequestDataStructure();
+
+    try {
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+
+        if (isProceed) {
+            const sanizedRqData = deepStringify(requestData);
+            const logJsonInfo = JSON.stringify(sanizedRqData, null, 2);
+            await logToWorker(jsFunc + BR + logJsonInfo, LogLevel.DEBUG);
+            var responseData = await processRequest(sanizedRqData);
+
+            if (!responseData.IsSuccess && !isTest) {
+                await parent.TerminalApi.ShowCustomAlert(jsFunc,
+                    JSON.stringify(responseData.ResponseMessage, null, 2), 2);
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+        } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
+    } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
+}
+// #endregion
+
+// #region "PreFunctionButton_498", "PreFunctionButton_498"
+async function PreFunctionButton_498() {
+    var jsFunc = "498";
+    var rqType = "PreFunctionButton_498";
+    var rqName = "PreFunctionButton_498";
+    var requestData = new RequestDataStructure();
+
+    try {
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+
+        if (isProceed) {
+            const sanizedRqData = deepStringify(requestData);
+            const logJsonInfo = JSON.stringify(sanizedRqData, null, 2);
+            await logToWorker(jsFunc + BR + logJsonInfo, LogLevel.DEBUG);
+            var responseData = await processRequest(sanizedRqData);
+
+            if (!responseData.IsSuccess && !isTest) {
+                await parent.TerminalApi.ShowCustomAlert(jsFunc,
+                    JSON.stringify(responseData.ResponseMessage, null, 2), 2);
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+        } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
+    } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
+}
+// #endregion
+
+// #region "PreFunctionButton_499", "PreFunctionButton_499"
+async function PreFunctionButton_499() {
+    var jsFunc = "499";
+    var rqType = "PreFunctionButton_499";
+    var rqName = "PreFunctionButton_499";
+    var requestData = new RequestDataStructure();
+
+    try {
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+
+        if (isProceed) {
+            const sanizedRqData = deepStringify(requestData);
+            const logJsonInfo = JSON.stringify(sanizedRqData, null, 2);
+            await logToWorker(jsFunc + BR + logJsonInfo, LogLevel.DEBUG);
+            var responseData = await processRequest(sanizedRqData);
+
+            if (!responseData.IsSuccess && !isTest) {
+                await parent.TerminalApi.ShowCustomAlert(jsFunc,
+                    JSON.stringify(responseData.ResponseMessage, null, 2), 2);
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+        } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
+    } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
+}
+// #endregion
 // #endregion
 
 // #region "PostItem", "PostItem"
