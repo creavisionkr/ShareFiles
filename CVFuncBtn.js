@@ -9,7 +9,7 @@ const isTest = false;
 (function Register() {
     try {
         if (!isTest) {
-
+            //Standard Function Button Subscriptions
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_46", "PreVoidItem");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_46", "PostVoidItem");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_54", "PreClosedCheck");
@@ -18,6 +18,19 @@ const isTest = false;
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_160", "PostReOpenClosedCheck");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_440", "PrePrintClosedCheck");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_440", "PostPrintClosedCheck");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_465", "PreAgysCardPayment");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_465", "PostAgysCardPayment");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PostItem", "PostItem");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreSaveCheck", "PreSaveCheck");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PostSaveCheck", "PostSaveCheck");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreVoidCheck", "PreVoidCheck");
+            //parent.TerminalApi.Subscribe(window.frameElement.id, "PreVoidChkEntities", "PreVoidItem");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreCancelCheck", "PreCancelCheck");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreTender", "PreTender");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PostTender", "PostTender");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PrepareCheckReceipt", "PrepareCheckReceipt");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PrepareCheckReceiptV2", "PrepareCheckReceipt");
+            //Customizable Function Button Subscriptions
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_370", "MemberInquiry");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_371", "MemberDiscount");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_372", "EmployeeDiscount");
@@ -28,8 +41,6 @@ const isTest = false;
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_377", "CCDiscount");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_378", "RptCheckByTable");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_379", "RoomDetailSearch");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_465", "PreAgysCardPayment");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_465", "PostAgysCardPayment");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_480", "CCDiscountNew");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_481", "CCLookupDc");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_482", "PreFunctionButton_482");
@@ -51,16 +62,6 @@ const isTest = false;
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_497", "PreFunctionButton_497");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_498", "PreFunctionButton_498");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_499", "PreFunctionButton_499");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PostItem", "PostItem");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreSaveCheck", "PreSaveCheck");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PostSaveCheck", "PostSaveCheck");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreVoidCheck", "PreVoidCheck");
-            //parent.TerminalApi.Subscribe(window.frameElement.id, "PreVoidChkEntities", "PreVoidItem");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreCancelCheck", "PreCancelCheck");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreTender", "PreTender");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PostTender", "PostTender");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PrepareCheckReceipt", "PrepareCheckReceipt");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PrepareCheckReceiptV2", "PrepareCheckReceipt");
         }
     }
     catch (error) { console.log("Register catch: " + error); }
@@ -225,16 +226,26 @@ async function GetTerminalInfo(jsFunc, rqData) {
         //2025-01-24T00:00:00+09:00:string|10:47:08.7016193:string|33:number|17:number|
         //Oak Bar:string|17:number|2:number|
         var terminalDate = (isTest) ? "2025-01-14" : await parent.TerminalApi.GetTerminalDate();
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "terminalDate:" + terminalDate); //20260611
         var terminalTime = (isTest) ? "00:00:00" : await parent.TerminalApi.GetTerminalTime();
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "terminalTime:" + terminalTime); //20260611
         var terminalId = (isTest) ? "01" : await parent.TerminalApi.GetTerminalId();
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "terminalId:" + terminalId); //20260611
         var profitCenterId = (isTest) ? "01" : await parent.TerminalApi.GetProfitCenterId();
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "profitCenterId:" + profitCenterId); //20260611
         var profitCenterName = (isTest) ? "profitCenterName" : await parent.TerminalApi.GetProfitCenterNameById(String(profitCenterId));
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "profitCenterName:" + profitCenterName); //20260611
         var profitCenterPrId = (isTest) ? "01" : await parent.TerminalApi.GetPrimaryProfitCenterId();
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "profitCenterPrId:" + profitCenterPrId); //20260611
         var curMealPeriodId = (isTest) ? "01" : await parent.TerminalApi.GetCurrentMealPeriodId();
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "curMealPeriodId:" + curMealPeriodId); //20260611
         var employeeId = (isTest) ? "999" : await parent.TerminalApi.GetSignedInEmpId();
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "employeeId:" + employeeId); //20260611
         var employeeIdJobCode = (isTest) ? "01" : await parent.TerminalApi.GetSignedInEmpJobCodeId();
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "employeeIdJobCode:" + employeeIdJobCode); //20260611
         //2026.01.21 Add getting of EnterpriseId from POS
         var enterpriseId = (isTest) ? "001" : await parent.TerminalApi.GetEnterpriseId();
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "enterpriseId:" + enterpriseId); //20260611
 
         rqData.setTerminalInfo({
             TrmDt: terminalDate,
@@ -269,40 +280,66 @@ async function GetCheckBasicInfo(jsFunc, rqData, checkInfo) {
         // #region Check General Information
         //|1:string|8:number|OB 42:string|330003:string|11:string|true:boolean|false:boolean|false:boolean|
         var cashierId = (isTest) ? "999" : await parent.TerminalApi.GetCheckCashierId(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "cashierId:" + cashierId); //20260611
         var checkTable = (isTest) ? "checkTable" : await parent.TerminalApi.GetCheckTableName(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkTable:" + checkTable); //20260611
         var checkNumber = (isTest) ? "1111111" : await parent.TerminalApi.GetcheckNumber(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkNumber:" + checkNumber); //20260611
         //2025.05.28 Added API
         var assocCheckNumber = (isTest) ? "1111111" : await parent.TerminalApi.GetAssociatedCheckNumber(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "assocCheckNumber:" + assocCheckNumber); //20260611
         var checkType = (isTest) ? "01" : await parent.TerminalApi.GetCheckTypeId(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkType:" + checkType); //20260611
         var isCheckOpen = (isTest) ? true : await parent.TerminalApi.IsCheckOpen(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "isCheckOpen:" + isCheckOpen); //20260611
         var isCheckRefund = (isTest) ? false : await parent.TerminalApi.IsCheckRefunded(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "isCheckRefund:" + isCheckRefund); //20260611
         var isCheckReopen = (isTest) ? false : await parent.TerminalApi.IsCheckReopened(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "isCheckReopen:" + isCheckReopen); //20260611
         //|0:number|null:object|null:object|null:object|
         var checkCoverCount = (isTest) ? "02" : await parent.TerminalApi.GetCheckCoverCount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkCoverCount:" + checkCoverCount); //20260611
         var checkDataTag = (isTest) ? "checkDataTag" : await parent.TerminalApi.GetCheckDataTag(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkDataTag:" + checkDataTag); //20260611
         var checkGuestId = (isTest) ? "checkGuestId" : await parent.TerminalApi.GetCheckGuestId(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkGuestId:" + checkGuestId); //20260611
         var checkGuestName = (isTest) ? "checkGuestName" : await parent.TerminalApi.GetCheckGuestName(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkGuestName:" + checkGuestName); //20260611
         //|21950:number|1:string|
         var checkBalAmount = (isTest) ? "8000" : await parent.TerminalApi.GetCheckBalanceAmount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkBalAmount:" + checkBalAmount); //20260611
         var checkServerId = (isTest) ? "01" : await parent.TerminalApi.GetCheckServerId(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkServerId:" + checkServerId); //20260611
         // #endregion
         // #region Menu Item & Discount Count
         //|3:number|0:number|1:number|
         var checkMenuItemCount = (isTest) ? 2 : await parent.TerminalApi.GetCheckMenuItemCount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkMenuItemCount:" + checkMenuItemCount); //20260611
         var itemDiscCount = (isTest) ? 2 : await parent.TerminalApi.GetCheckItemLevelDiscountCount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "itemDiscCount:" + itemDiscCount); //20260611
         var checkDiscCount = (isTest) ? 2 : await parent.TerminalApi.GetCheckLevelDiscountCount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkDiscCount:" + checkDiscCount); //20260611
         // #endregion
         // #region Check Level Financial Information
         //|true:boolean|1:number|0:number|3347:number|22314:number|18967:number|2086:number|1897:number|22950:number|
         var isTenderPresent = (isTest) ? false : await parent.TerminalApi.IsTenderPresent(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "isTenderPresent:" + isTenderPresent); //20260611
         var checkTenderCount = (isTest) ? 2 : await parent.TerminalApi.GetCheckTenderCount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkTenderCount:" + checkTenderCount); //20260611
         var checkChgAmount = (isTest) ? "0" : await parent.TerminalApi.GetCheckChangeAmount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkChgAmount:" + checkChgAmount); //20260611
         var checkDcAmount = (isTest) ? "1000" : await parent.TerminalApi.GetCheckDiscountAmount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkDcAmount:" + checkDcAmount); //20260611
         var checkSaleGrsAmount = (isTest) ? "10000" : await parent.TerminalApi.GetCheckSalesGrossAmount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkSaleGrsAmount:" + checkSaleGrsAmount); //20260611
         var checkSaleNetAmount = (isTest) ? "8800" : await parent.TerminalApi.GetCheckSalesNetAmount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkSaleNetAmount:" + checkSaleNetAmount); //20260611
         var checkTaxAmount = (isTest) ? "880" : await parent.TerminalApi.GetCheckTaxAmount(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkTaxAmount:" + checkTaxAmount); //20260611
         var checkSvcCharge = (isTest) ? "320" : await parent.TerminalApi.GetCheckServiceChargeValue(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkSvcCharge:" + checkSvcCharge); //20260611
         var checkGrandTotal = (isTest) ? "10000" : await parent.TerminalApi.GetCheckTotal(checkInfo);
+        if (!isTest) await parent.TerminalApi.Log(JSProgName, "checkGrandTotal:" + checkGrandTotal); //20260611
         // #endregion
 
         // #region requestData.setCheckBasicInfo
