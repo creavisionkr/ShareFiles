@@ -398,8 +398,11 @@ async function GetCheckRevenueInfo(jsFunc, rqData, checkInfo) {
         for (let i = 0; i < 99; i++) {
             //|1|22314:number|18967:number|
             var revId = 1 + i;
+            if (!isTest) await parent.TerminalApi.Log(JSProgName, "revId:" + revId); //20260615
             var revGrsAmt = (isTest) ? "10000" : await parent.TerminalApi.GetCheckRevenueGrossAmount(checkInfo, revId);
+            if (!isTest) await parent.TerminalApi.Log(JSProgName, "revGrsAmt:" + revGrsAmt); //20260615
             var revNetAmt = (isTest) ? "8800" : await parent.TerminalApi.GetCheckRevenueNetAmount(checkInfo, revId);
+            if (!isTest) await parent.TerminalApi.Log(JSProgName, "revNetAmt:" + revNetAmt); //20260615
 
             if (revGrsAmt > 0) {
                 logInfo += "*" + BR + revId + BR + revGrsAmt + CL + typeof revGrsAmt + BR +
