@@ -9,7 +9,7 @@ const isTest = false;
 (function Register() {
     try {
         if (!isTest) {
-
+            //Standard Function Button Subscriptions
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_46", "PreVoidItem");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_46", "PostVoidItem");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_54", "PreClosedCheck");
@@ -18,39 +18,8 @@ const isTest = false;
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_160", "PostReOpenClosedCheck");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_440", "PrePrintClosedCheck");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_440", "PostPrintClosedCheck");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_370", "MemberInquiry");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_371", "MemberDiscount");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_372", "EmployeeDiscount");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_373", "CheckDiscount");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_374", "ItemDiscount");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_375", "SalesGiftGC");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_376", "PaidGiftGC");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_377", "CCDiscount");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_378", "RptCheckByTable");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_379", "RoomDetailSearch");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_465", "PreAgysCardPayment");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_465", "PostAgysCardPayment");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_480", "CCDiscountNew");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_481", "CCLookupDc");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_482", "PreFunctionButton_482");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_483", "PreFunctionButton_483");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_484", "PreFunctionButton_484");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_485", "PreFunctionButton_485");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_486", "PrintCardSlip");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_487", "LastCardSlip");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_488", "ManualCard");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_489", "ReopenErrCard");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_490", "CEPSettings");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_491", "ParnasRewardMembership");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_492", "PreCustomReOpenClosedCheck");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_492", "PostCustomReOpenClosedCheck");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_493", "HelpGuideFor12UX");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_494", "PreFunctionButton_494");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_495", "PreFunctionButton_495");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_496", "PreFunctionButton_496");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_497", "PreFunctionButton_497");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_498", "PreFunctionButton_498");
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_499", "PreFunctionButton_499");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostItem", "PostItem");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreSaveCheck", "PreSaveCheck");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostSaveCheck", "PostSaveCheck");
@@ -61,6 +30,38 @@ const isTest = false;
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostTender", "PostTender");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PrepareCheckReceipt", "PrepareCheckReceipt");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PrepareCheckReceiptV2", "PrepareCheckReceipt");
+            //Customizable Function Button Subscriptions
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_370", "PreFunctionButton_370"); //MemberInquiry
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_371", "PreFunctionButton_371"); //MemberDiscount
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_372", "PreFunctionButton_372"); //EmployeeDiscount
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_373", "PreFunctionButton_373"); //CheckDiscount
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_374", "PreFunctionButton_374"); //ItemDiscount
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_375", "PreFunctionButton_375"); //SalesGiftGC
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_376", "PreFunctionButton_376"); //PaidGiftGC
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_377", "PreFunctionButton_377"); //CCDiscount
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_378", "PreFunctionButton_378"); //RptCheckByTable
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_379", "PreFunctionButton_379"); //RoomDetailSearch
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_480", "PreFunctionButton_480"); //CCDiscountNew
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_481", "PreFunctionButton_481"); //CCLookupDc
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_482", "PreFunctionButton_482");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_483", "PreFunctionButton_483");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_484", "PreFunctionButton_484");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_485", "PreFunctionButton_485");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_486", "PreFunctionButton_486"); //PrintCardSlip
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_487", "PreFunctionButton_487"); //LastCardSlip
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_488", "PreFunctionButton_488"); //ManualCard
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_489", "PreFunctionButton_489"); //ReopenErrCard
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_490", "PreFunctionButton_490"); //CEPSettings
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_491", "PreFunctionButton_491"); //ParnasRewardMembership
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_492", "PreFunctionButton_492"); //PreCustomReOpenClosedCheck
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_492", "PostFunctionButton_492"); //PostCustomReOpenClosedCheck
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_493", "PreFunctionButton_493"); //HelpGuideFor12UX
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_494", "PreFunctionButton_494"); //KRSpecialInstruction
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_495", "PreFunctionButton_495");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_496", "PreFunctionButton_496");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_497", "PreFunctionButton_497");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_498", "PreFunctionButton_498");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_499", "PreFunctionButton_499");
         }
     }
     catch (error) { console.log("Register catch: " + error); }
@@ -235,7 +236,7 @@ async function GetTerminalInfo(jsFunc, rqData) {
         var employeeIdJobCode = (isTest) ? "01" : await parent.TerminalApi.GetSignedInEmpJobCodeId();
         //2026.01.21 Add getting of EnterpriseId from POS
         var enterpriseId = (isTest) ? "001" : await parent.TerminalApi.GetEnterpriseId();
-
+        
         rqData.setTerminalInfo({
             TrmDt: terminalDate,
             TrmTm: terminalTime,
@@ -363,7 +364,7 @@ async function GetCheckRevenueInfo(jsFunc, rqData, checkInfo) {
             var revId = 1 + i;
             var revGrsAmt = (isTest) ? "10000" : await parent.TerminalApi.GetCheckRevenueGrossAmount(checkInfo, revId);
             var revNetAmt = (isTest) ? "8800" : await parent.TerminalApi.GetCheckRevenueNetAmount(checkInfo, revId);
-
+            
             if (revGrsAmt > 0) {
                 logInfo += "*" + BR + revId + BR + revGrsAmt + CL + typeof revGrsAmt + BR +
                     revNetAmt + CL + typeof revNetAmt + BR + NL;
@@ -546,8 +547,8 @@ async function GetHighlightedIndexInfo(jsFunc, rqData, checkInfo) {
                 var menuItemQty = (isTest) ? 1 : await parent.TerminalApi.GetMenuItemQuantity(highlightedNode);
                 var menuItemDesc = (isTest) ? "menuItemDesc" : await parent.TerminalApi.GetCheckItemDescription(highlightedNode);
                 var menuItemBaseAmount = (isTest) ? 4500 : await parent.TerminalApi.GetMenuItemCost(highlightedNode);
-                //TODO
-                var menuItemRevCatId = (isTest) ? 1 : 1;//await parent.TerminalApi.GetMenuItemRevenueCategoryByMenuItemId(String(menuItemId));
+                //20260617 Bug Fix Need Revenue Category Id 
+                var menuItemRevCatId = (isTest) ? 1 : await parent.TerminalApi.GetMenuItemRevenueCategoryId(String(menuItemId));
                 var menuItemPClsId = (isTest) ? 1 : await parent.TerminalApi.GetMenuItemProductClassId(String(menuItemId));
                 var menuItemVoidId = (isTest) ? 0 : await parent.TerminalApi.GetMenuItemVoidId(highlightedNode);
 
@@ -699,7 +700,7 @@ async function GetAllInfo(jsFunc, rqType, rqName, requestData, getBasicInfo, get
 // #endregion
 
 // #region "PreFunctionButton_370", "MemberInquiry"
-async function MemberInquiry() {
+async function PreFunctionButton_370() {
     var jsFunc = "370";
     var rqType = "PreFunctionButton_370";
     var rqName = "MemberInquiry";
@@ -726,7 +727,7 @@ async function MemberInquiry() {
 // #endregion
 
 // #region "PreFunctionButton_371", "MemberDiscount"
-async function MemberDiscount() {
+async function PreFunctionButton_371() {
     var jsFunc = "371";
     var rqType = "PreFunctionButton_371";
     var rqName = "MemberDiscount";
@@ -826,7 +827,7 @@ async function MemberDiscount() {
 // #endregion
 
 // #region "PreFunctionButton_372", "EmployeeDiscount"
-async function EmployeeDiscount() {
+async function PreFunctionButton_372() {
     var jsFunc = "372";
     var rqType = "PreFunctionButton_372";
     var rqName = "EmployeeDiscount";
@@ -926,7 +927,7 @@ async function EmployeeDiscount() {
 // #endregion
 
 // #region "PreFunctionButton_373", "CheckDiscount"
-async function CheckDiscount() {
+async function PreFunctionButton_373() {
     var jsFunc = "373";
     var rqType = "PreFunctionButton_373";
     var rqName = "CheckDiscount";
@@ -1023,7 +1024,7 @@ async function CheckDiscount() {
 // #endregion
 
 // #region "PreFunctionButton_374", "ItemDiscount"
-async function ItemDiscount() {
+async function PreFunctionButton_374() {
     var jsFunc = "374";
     var rqType = "PreFunctionButton_374";
     var rqName = "ItemDiscount";
@@ -1080,7 +1081,7 @@ async function ItemDiscount() {
 // #endregion
 
 // #region "PreFunctionButton_375", "SalesGiftGC"
-async function SalesGiftGC() {
+async function PreFunctionButton_375() {
     var jsFunc = "375";
     var rqType = "PreFunctionButton_375";
     var rqName = "SalesGiftGC";
@@ -1105,7 +1106,7 @@ async function SalesGiftGC() {
 // #endregion
 
 // #region "PreFunctionButton_376", "PaidGiftGC"
-async function PaidGiftGC() {
+async function PreFunctionButton_376() {
     var jsFunc = "376";
     var rqType = "PreFunctionButton_376";
     var rqName = "PaidGiftGC";
@@ -1130,7 +1131,7 @@ async function PaidGiftGC() {
 // #endregion
 
 // #region "PreFunctionButton_378", "RptCheckByTable"
-async function RptCheckByTable() {
+async function PreFunctionButton_378() {
     var jsFunc = "378";
     var rqType = "PreFunctionButton_378";
     var rqName = "RptCheckByTable";
@@ -1155,7 +1156,7 @@ async function RptCheckByTable() {
 // #endregion
 
 // #region "PreFunctionButton_379", "RoomDetailSearch"
-async function RoomDetailSearch() {
+async function PreFunctionButton_379() {
     var jsFunc = "379";
     var rqType = "PreFunctionButton_379";
     var rqName = "RoomDetailSearch";
@@ -1194,7 +1195,7 @@ async function RoomDetailSearch() {
 // #endregion
 
 // #region "PreFunctionButton_377", "CCDiscount"
-async function CCDiscount() {
+async function PreFunctionButton_377() {
     var jsFunc = "377";
     var rqType = "PreFunctionButton_377";
     var rqName = "CCDiscount";
@@ -1292,7 +1293,7 @@ async function CCDiscount() {
 // #endregion
 
 // #region "PreFunctionButton_480", "CCDiscountNew"
-async function CCDiscountNew() {
+async function PreFunctionButton_480() {
     var jsFunc = "480";
     var rqType = "PreFunctionButton_480";
     var rqName = "CCDiscountNew";
@@ -1390,7 +1391,7 @@ async function CCDiscountNew() {
 // #endregion
 
 // #region "PreFunctionButton_481", "CCLookupDc"
-async function CCLookupDc() {
+async function PreFunctionButton_481() {
     var jsFunc = "481";
     var rqType = "PreFunctionButton_481";
     var rqName = "CCLookupDc";
@@ -1571,7 +1572,7 @@ async function PreFunctionButton_485() {
 // #endregion
 
 // #region "PreFunctionButton_486", "PrintCardSlip"
-async function PrintCardSlip() {
+async function PreFunctionButton_486() {
     var jsFunc = "486";
     var rqType = "PreFunctionButton_486";
     var rqName = "PrintCardSlip";
@@ -1609,7 +1610,7 @@ async function PrintCardSlip() {
 // #endregion
 
 // #region "PreFunctionButton_487", "LastCardSlip"
-async function LastCardSlip() {
+async function PreFunctionButton_487() {
     var jsFunc = "487";
     var rqType = "PreFunctionButton_487";
     var rqName = "LastCardSlip";
@@ -1634,7 +1635,7 @@ async function LastCardSlip() {
 // #endregion
 
 // #region "PreFunctionButton_488", "ManualCard"
-async function ManualCard() {
+async function PreFunctionButton_488() {
     var jsFunc = "488";
     var rqType = "PreFunctionButton_488";
     var rqName = "ManualCard";
@@ -1659,7 +1660,7 @@ async function ManualCard() {
 // #endregion
 
 // #region "PreFunctionButton_489", "ReopenErrCard"
-async function ReopenErrCard() {
+async function PreFunctionButton_489() {
     var jsFunc = "489";
     var rqType = "PreFunctionButton_489";
     var rqName = "ReopenErrCard";
@@ -1684,7 +1685,7 @@ async function ReopenErrCard() {
 // #endregion
 
 // #region "PreFunctionButton_490", "CEPSettings"
-async function CEPSettings() {
+async function PreFunctionButton_490() {
     var jsFunc = "490";
     var rqType = "PreFunctionButton_490";
     var rqName = "CEPSettings";
@@ -1709,7 +1710,7 @@ async function CEPSettings() {
 // #endregion
 
 // #region "PreFunctionButton_491", "ParnasRewardMembership"
-async function ParnasRewardMembership() {
+async function PreFunctionButton_491() {
     var jsFunc = "491";
     var rqType = "PreFunctionButton_491";
     var rqName = "ParnasRewardMembership";
@@ -1831,7 +1832,7 @@ async function ParnasRewardMembership() {
 
 //20260127 Added New Function for Tracking of Card Payment via AGYS
 // #region "PreFunctionButton_493", "HelpGuideFor12UX"
-async function HelpGuideFor12UX() {
+async function PreFunctionButton_493() {
     var jsFunc = "493";
     var rqType = "PreFunctionButton_493";
     var rqName = "12UXHelpGuide";
@@ -1856,15 +1857,16 @@ async function HelpGuideFor12UX() {
 // #endregion
 
 // #region 20260526 Added New Function to call 3rd Party Application
-// #region "PreFunctionButton_494", "PreFunctionButton_494"
+// #region "PreFunctionButton_494", "KRSpecialInstruction"
+// 20260708 Fix this function to be used for special instruction for Korean Language, to be used for 12UX
 async function PreFunctionButton_494() {
     var jsFunc = "494";
     var rqType = "PreFunctionButton_494";
-    var rqName = "PreFunctionButton_494";
+    var rqName = "KRSpecialInstruction";
     var requestData = new RequestDataStructure();
 
     try {
-        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, false);
+        var isProceed = await GetAllInfo(jsFunc, rqType, rqName, requestData, true, true);
 
         if (isProceed) {
             const sanizedRqData = deepStringify(requestData);
@@ -1875,7 +1877,20 @@ async function PreFunctionButton_494() {
             if (!responseData.IsSuccess && !isTest) {
                 await parent.TerminalApi.ShowCustomAlert(jsFunc,
                     JSON.stringify(responseData.ResponseMessage, null, 2), 2);
-            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO); }
+            } else { await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO);
+
+                //20260608 Added Code to check for Special Instruction Details, if provided, add to the check
+                //Analyze Response - If Special Instruction Details are provided, add to the check
+                if (responseData.AddSpecialInst) {
+                    for (var instruction of responseData.SpecialInstDetails) {
+                        //Add Item to Check
+                        var result = await parent.TerminalApi.AddSpecialInstruction(instruction);
+
+                        await logToWorker(jsFunc + CL + "|Add Instruction|" + instruction + BR +
+                            "Add Status:" + JSON.stringify(result, null, 2), LogLevel.INFO);
+                    };
+                }
+            }
         } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
     } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
 }
@@ -2634,7 +2649,7 @@ async function PostReOpenClosedCheck() {
 
 //20260127 Added New Function for Re-Open Today's Check New Logic
 // #region "PreFunctionButton_492", "PreCustomReOpenClosedCheck"
-async function PreCustomReOpenClosedCheck() {
+async function PreFunctionButton_492() {
     var jsFunc = "492";
     var rqType = "PreFunctionButton_492";
     var rqName = "PreCustomReOpenClosedCheck";
@@ -2671,7 +2686,7 @@ async function PreCustomReOpenClosedCheck() {
 
 //20260127 Added New Function for Re-Open Today's Check New Logic
 // #region "PostFunctionButton_492", "PostCustomReOpenClosedCheck"
-async function PostCustomReOpenClosedCheck() {
+async function PostFunctionButton_492() {
     var jsFunc = "492";
     var rqType = "PostFunctionButton_492";
     var rqName = "PostCustomReOpenClosedCheck";
@@ -2842,3 +2857,4 @@ if (isTest) MemberInquiry();
 if (isTest) MemberDiscount();
 if (isTest) RptCheckByTable();
 if (isTest) RoomDetailSearch();
+
