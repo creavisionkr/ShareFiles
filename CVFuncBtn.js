@@ -57,7 +57,7 @@ const isTest = false;
             parent.TerminalApi.Subscribe(window.frameElement.id, "PostFunctionButton_492", "PostFunctionButton_492"); //PostCustomReOpenClosedCheck
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_493", "PreFunctionButton_493"); //HelpGuideFor12UX
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_494", "PreFunctionButton_494"); //KRSpecialInstruction
-            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_495", "PreFunctionButton_495");
+            parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_495", "PreFunctionButton_495"); //Cash Drawer
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_496", "PreFunctionButton_496");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_497", "PreFunctionButton_497");
             parent.TerminalApi.Subscribe(window.frameElement.id, "PreFunctionButton_498", "PreFunctionButton_498");
@@ -596,7 +596,11 @@ async function GetHighlightedIndexInfo(jsFunc, rqData, checkInfo) {
                     PayBsAmt: itemPayBaseAmount
                 });
                 break;
-            default:
+            default: //20260713 Add Tracking of other nodetype for future development
+                rqData.setHighlightedIndexInfo({
+                    otherIdx: otherIdx,
+                    nodeType: nodeType
+                });
                 break;
         }
 
@@ -1896,7 +1900,7 @@ async function PreFunctionButton_494() {
 }
 // #endregion
 
-// #region "PreFunctionButton_495", "PreFunctionButton_495"
+// #region "PreFunctionButton_495", "CashDrawer"
 async function PreFunctionButton_495() {
     var jsFunc = "495";
     var rqType = "PreFunctionButton_495";
@@ -2241,6 +2245,10 @@ async function PostVoidItem() {
                     JSON.stringify(responseData.ResponseMessage, null, 2), 2);
             } else {
                 await logToWorker(rqType + CL + responseData.ResponseMessage, LogLevel.INFO);
+
+                //20260713 Add clearing of DataTag after void processing as needed
+                var checkInfo = await GetCheckObjectFromIG();
+                if (responseData.ClearCheckDataTag) await SetCheckDataTag(checkInfo, responseData.CheckDataTag);
 
                 //20260115 Added clearing of DataString after void processing if any
                 if (responseData.CheckDataString) {
