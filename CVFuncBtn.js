@@ -2854,12 +2854,12 @@ async function PrepareCheckReceipt(event) {
                 for (var customText of responseData.CR_AfterFooter) {
                     await parent.TerminalApi.ReceiptAppendText(customText);}}
 
-            //20260713 Required to be added to fix Left Margin Issue when printing receipt with custom text
-            await parent.TerminalApi.ResetMarginConfiguration();
-
             var receipt = await parent.TerminalApi.GetReceiptText();
             await event.invokeMethodAsync('SetParam', 'Receipt', receipt);
             await logToWorker(jsFunc + CL + "Receipt-" + receipt, LogLevel.INFO);
+
+            //20260713 Required to be added to fix Left Margin Issue when printing receipt with custom text
+            await parent.TerminalApi.ResetMarginConfiguration();
 
         } else { await logToWorker(jsFunc + BR + "GetAllInfo Failed.", LogLevel.INFO); }
     } catch (error) { await logToWorker(jsFunc + BR + error, LogLevel.ERROR); }
