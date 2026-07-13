@@ -598,8 +598,8 @@ async function GetHighlightedIndexInfo(jsFunc, rqData, checkInfo) {
                 break;
             default: //20260713 Add Tracking of other nodetype for future development
                 rqData.setHighlightedIndexInfo({
-                    otherIdx: otherIdx,
-                    nodeType: nodeType
+                    OtherIdx: otherIdx,
+                    NodeType: nodeType
                 });
                 break;
         }
