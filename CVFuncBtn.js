@@ -2811,10 +2811,11 @@ async function PrepareCheckReceipt(event) {
 
             await logToWorker(jsFunc + CL + responseData.ResponseMessage, LogLevel.INFO);
 
+            await parent.window.Receipt.GetReceiptText(event);
+
             //20260713 Required to be added to fix Left Margin Issue when printing receipt with custom text
             await parent.TerminalApi.GetMarginConfiguration();
 
-            await parent.window.Receipt.GetReceiptText(event);
             await parent.TerminalApi.ReceiptInit();
 
             await parent.TerminalApi.ReceiptOrderHeader();
